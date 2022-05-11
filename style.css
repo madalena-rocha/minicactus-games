@@ -307,6 +307,8 @@ body.menu-expanded button path {
     padding:0;
     width: 24%;
     border-radius: 0.2rem;
+    
+    flex-grow: 0.1;
 }
 
 #games .button:hover {
