@@ -304,11 +304,11 @@ body.menu-expanded button path {
     background-color: var(--secondary-color);
     color: var(--primary-color);
 
-    padding:0;
     width: 24%;
-    border-radius: 0.2rem;
+    height: 5rem;
     
-    flex-grow: 0.1;
+    padding:0;
+    border-radius: 0.2rem;
 }
 
 #games .button:hover {
