@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minicactus Games</title>
+
+    <link rel="stylesheet" href="./style.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navigation">
+        <div class="wrapper">
+            <a class="logo" href="#games">
+                <img src="./assets/minicactus-games-logo.png" alt="Minicactus Games logo showing a cactus 
+                with a hanging control" />
+                
+                <h3>Minicactus Games</h3>
+            </a>
+
+            <div class="menu">
+                <ul>
+                    <li><a onclick="closeMenu()" href="#games">Games</a></li>
+                    <li><a onclick="closeMenu()" href="#news">News</a></li>
+                    <li><a onclick="closeMenu()" href="#about">About</a></li>
+                    <li><a onclick="closeMenu()" href="#contact">Contact</a></li>  
+                </ul>
+
+                <a class="button" target="_blank" 
+                    href="https://store.steampowered.com/developer/minicactusgames">
+                    Follow The Steam Page
+                </a>
+
+                <ul class="social-links">
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/minicactusgames/">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 1.99997H7C4.23858 1.99997 2 4.23855 2 6.99997V17C2 19.7614 
+                                4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V6.99997C22 4.23855 19.7614 
+                                1.99997 17 1.99997Z" stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" 
+                                stroke-linejoin="round"/>
+                                <path d="M15.9997 11.3701C16.1231 12.2023 15.981 13.0523 15.5935 
+                                13.7991C15.206 14.5459 14.5929 15.1515 13.8413 15.5297C13.0898 15.908 12.2382 
+                                16.0397 11.4075 15.906C10.5768 15.7723 9.80947 15.3801 9.21455 
+                                14.7852C8.61962 14.1903 8.22744 13.4229 8.09377 12.5923C7.96011 11.7616 
+                                8.09177 10.91 8.47003 10.1584C8.84829 9.40691 9.45389 8.7938 10.2007 
+                                8.4063C10.9475 8.0188 11.7975 7.87665 12.6297 8.00006C13.4786 8.12594 14.2646 
+                                8.52152 14.8714 9.12836C15.4782 9.73521 15.8738 10.5211 15.9997 11.3701Z" 
+                                stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" 
+                                stroke-linejoin="round"/>
+                                <path d="M17.5 6.49997H17.51" stroke="#FFFAF1" stroke-width="2" 
+                                stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>   
+                        </a>
+                    </li>
+
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/minicactusgames">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 1.99997H15C13.6739 1.99997 12.4021 2.52675 11.4645 
+                                3.46444C10.5268 4.40212 10 5.67389 10 6.99997V9.99997H7V14H10V22H14V14H17L18 
+                                9.99997H14V6.99997C14 6.73475 14.1054 6.4804 14.2929 6.29286C14.4804 6.10533 
+                                14.7348 5.99997 15 5.99997H18V1.99997Z" stroke="#FFFAF1" stroke-width="2" 
+                                stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </a>
+                    </li>
+
+                    <li>
+                        <a target="_blank" 
+                            href="https://www.youtube.com/channel/UCPaNusJeoBWGPwrD-MCBYrw/featured">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.5396 6.42C22.4208 5.94541 22.1789 5.51057 21.8382 
+                                5.15941C21.4976 4.80824 21.0703 4.55318 20.5996 4.42C18.8796 4 11.9996 4 
+                                11.9996 4C11.9996 4 5.1196 4 3.3996 4.46C2.92884 4.59318 2.50157 4.84824 
+                                2.16094 5.19941C1.82031 5.55057 1.57838 5.98541 1.4596 6.46C1.14481 8.20556 
+                                0.990831 9.97631 0.999595 11.75C0.988374 13.537 1.14236 15.3213 1.4596 
+                                17.08C1.59055 17.5398 1.8379 17.9581 2.17774 18.2945C2.51758 18.6308 2.93842 
+                                18.8738 3.3996 19C5.1196 19.46 11.9996 19.46 11.9996 19.46C11.9996 19.46 
+                                18.8796 19.46 20.5996 19C21.0703 18.8668 21.4976 18.6118 21.8382 
+                                18.2606C22.1789 17.9094 22.4208 17.4746 22.5396 17C22.852 15.2676 23.0059 
+                                13.5103 22.9996 11.75C23.0108 9.96295 22.8568 8.1787 22.5396 6.42Z" 
+                                stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" 
+                                stroke-linejoin="round"/>
+                                <path d="M9.75 15.02L15.5 11.75L9.75 8.48001V15.02Z" stroke="#FFFAF1" 
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </a>
+                    </li>
+
+                    <li>
+                        <a target="_blank" href="https://twitter.com/minicactusgames">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 
+                                18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.9572 14.8821 
+                                3.28445C14.0247 3.61171 13.2884 4.1944 12.773 4.95372C12.2575 5.71303 11.9877 
+                                6.61234 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39545C5.36074 
+                                6.60508 4.01032 5.43864 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.0989 1 
+                                19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 
+                                5.66349 22.6608 4.39271 23 3V3Z" stroke="#FFFFFF" stroke-width="2" 
+                                stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <button aria-expanded="false" aria-label="Abrir menu" onclick="openMenu()" class="open-menu">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" 
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 20H30" stroke="#00856F" stroke-width="2" stroke-linecap="round" 
+                    stroke-linejoin="round"/>
+                    <path d="M10 12H30" stroke="#00856F" stroke-width="2" stroke-linecap="round" 
+                    stroke-linejoin="round"/>
+                    <path d="M18 28L30 28" stroke="#00856F" stroke-width="2" stroke-linecap="round" 
+                    stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <button aria-expanded="true" aria-label="Fechar menu" onclick="closeMenu()" class="close-menu">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" 
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 10L10 30M10 10L30 30" stroke="#FFFAF1" stroke-width="2" 
+                    stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <section id="games">
+        <div class="wrapper">
+            <header>
+                <h2>Game <span>List</span></h2>
+            </header>
+
+            <div class="content">
+                <div class="cards">
+                    <div class="card">
+                        <img src="./assets/road-defense.png" alt="Character pointing a gun at the vehicle 
+                        that is passing on the road." />
+
+                        <h3>Road Defense</h3>
+
+                        <p>
+                            Protect the cars on the road! You can approach the defense towers and equip them 
+                            with various weapons to help you in the task. The hordes of criminals trying to 
+                            destroy the cars get bigger and bigger as the level progresses.
+                        </p>
+                        
+                        <div class="button-container">
+                            <a class="button" target="_blank" 
+                                href="https://store.steampowered.com/agecheck/app/1973320/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19" fill="#000000">
+                                    <title>Steam Logo</title>
+                                    <path d="M471.93,94l-6.1,10.8a30.91,30.91,0,0,0-16.8-5.3c-6.4,0-10.4,2.6-10.4,7.4,0,5.8,7,7.1,17.5,10.9,11.2,4,17.7,8.7,17.7,18.9,0,14.1-11.1,22-27,22-7.8,0-17.1-2-24.3-6.4l4.5-12a42,42,0,0,0,19.1,4.9c8.4,0,12.4-3.1,12.4-7.7,0-5.2-6.1-6.8-15.9-10.1-11.2-3.7-19-8.7-19-20.1,0-12.9,10.3-20.2,25.1-20.2C459,87.28,467.33,90.48,471.93,94Z"/>
+                                    <path d="M521,100.88v56.7h-14.5v-56.7h-21V88.48h56.4v12.4Z"/>
+                                    <path d="M571.43,100.78v15.6h27.7v12.4h-27.7V145h32.1v12.5h-46.6v-69h46.6v12.4h-32.1Z"/>
+                                    <path d="M635.93,144.18l-4.6,13.4h-15.2L642,88.48h14.6l26.7,69.1h-15.7l-4.7-13.4Zm13.4-39.3-9.4,27.7H659Z"/>
+                                    <path d="M756.53,115.18l-18.9,40.4h-8.2l-18.6-40v42h-13.9V88.48h13.8l23.2,49.9,22.4-49.9h14v69.1h-13.8Z"/>
+                                    <path d="M282.77,31.08a91.7,91.7,0,0,0-91.4,84.4l49.2,20.3a26.25,26.25,0,0,1,14.6-4.5h1.4l21.9-31.7v-.4a34.6,34.6,0,1,1,34.6,34.6h-.8l-31.2,22.3v1.2a26,26,0,0,1-51.5,5.1l-35.2-14.5a91.79,91.79,0,1,0,88.4-116.8Z"/>
+                                    <path d="M248.77,170.38l-11.3-4.7a19.92,19.92,0,0,0,10,9.6,19.57,19.57,0,0,0,25.5-10.5,19.25,19.25,0,0,0,0-14.9,19.37,19.37,0,0,0-24.9-10.8l11.6,4.8a14.37,14.37,0,0,1,7.7,18.8A14.16,14.16,0,0,1,248.77,170.38Z"/>
+                                    <path d="M336.07,99.18a23.1,23.1,0,1,0-23.1,23.1A23.11,23.11,0,0,0,336.07,99.18Zm-40.3,0a17.3,17.3,0,1,1,17.3,17.3A17.31,17.31,0,0,1,295.77,99.18Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="card">
+                        <img src="./assets/no-cat-fights-here.png" alt="Happy cats jumping on the roof of 
+                        city buildings." />
+
+                        <h3>No Cat Fights Here!</h3>
+
+                        <p>
+                            Let's avoid catfights on the roof? Draw a path for each cat to follow and keep 
+                            them from bumping into each other along the way.
+                        </p>  
+                        
+                        <div class="button-container">
+                            <a class="button" target="_blank" 
+                                href="https://store.steampowered.com/app/1942540/No_Cat_Fights_Here/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19" fill="#000000">
+                                    <title>Steam Logo</title>
+                                    <path d="M471.93,94l-6.1,10.8a30.91,30.91,0,0,0-16.8-5.3c-6.4,0-10.4,2.6-10.4,7.4,0,5.8,7,7.1,17.5,10.9,11.2,4,17.7,8.7,17.7,18.9,0,14.1-11.1,22-27,22-7.8,0-17.1-2-24.3-6.4l4.5-12a42,42,0,0,0,19.1,4.9c8.4,0,12.4-3.1,12.4-7.7,0-5.2-6.1-6.8-15.9-10.1-11.2-3.7-19-8.7-19-20.1,0-12.9,10.3-20.2,25.1-20.2C459,87.28,467.33,90.48,471.93,94Z"/>
+                                    <path d="M521,100.88v56.7h-14.5v-56.7h-21V88.48h56.4v12.4Z"/>
+                                    <path d="M571.43,100.78v15.6h27.7v12.4h-27.7V145h32.1v12.5h-46.6v-69h46.6v12.4h-32.1Z"/>
+                                    <path d="M635.93,144.18l-4.6,13.4h-15.2L642,88.48h14.6l26.7,69.1h-15.7l-4.7-13.4Zm13.4-39.3-9.4,27.7H659Z"/>
+                                    <path d="M756.53,115.18l-18.9,40.4h-8.2l-18.6-40v42h-13.9V88.48h13.8l23.2,49.9,22.4-49.9h14v69.1h-13.8Z"/>
+                                    <path d="M282.77,31.08a91.7,91.7,0,0,0-91.4,84.4l49.2,20.3a26.25,26.25,0,0,1,14.6-4.5h1.4l21.9-31.7v-.4a34.6,34.6,0,1,1,34.6,34.6h-.8l-31.2,22.3v1.2a26,26,0,0,1-51.5,5.1l-35.2-14.5a91.79,91.79,0,1,0,88.4-116.8Z"/>
+                                    <path d="M248.77,170.38l-11.3-4.7a19.92,19.92,0,0,0,10,9.6,19.57,19.57,0,0,0,25.5-10.5,19.25,19.25,0,0,0,0-14.9,19.37,19.37,0,0,0-24.9-10.8l11.6,4.8a14.37,14.37,0,0,1,7.7,18.8A14.16,14.16,0,0,1,248.77,170.38Z"/>
+                                    <path d="M336.07,99.18a23.1,23.1,0,1,0-23.1,23.1A23.11,23.11,0,0,0,336.07,99.18Zm-40.3,0a17.3,17.3,0,1,1,17.3,17.3A17.31,17.31,0,0,1,295.77,99.18Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="card">
+                        <img src="./assets/jigsaw-bestiary.jpg" alt="Partially assembled jigsaw puzzle 
+                        showing Quibungo devouring its victims." />
+
+                        <h3>Jigsaw Bestiary</h3>
+
+                        <p>
+                            Let's put the pieces together and meet amazing creatures. Here, the true 
+                            mythologies behind the monsters are explained after solving each jigsaw. The 
+                            beasts were illustrated by Alexandre Rocha (@semdizer) in his unique artistic 
+                            style.
+                        </p>
+                        
+                        <div class="button-container">
+                            <a class="button" target="_blank" 
+                                href="https://store.steampowered.com/app/1889650/Jigsaw_Bestiary/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19" fill="#000000">
+                                    <title>Steam Logo</title>
+                                    <path d="M471.93,94l-6.1,10.8a30.91,30.91,0,0,0-16.8-5.3c-6.4,0-10.4,2.6-10.4,7.4,0,5.8,7,7.1,17.5,10.9,11.2,4,17.7,8.7,17.7,18.9,0,14.1-11.1,22-27,22-7.8,0-17.1-2-24.3-6.4l4.5-12a42,42,0,0,0,19.1,4.9c8.4,0,12.4-3.1,12.4-7.7,0-5.2-6.1-6.8-15.9-10.1-11.2-3.7-19-8.7-19-20.1,0-12.9,10.3-20.2,25.1-20.2C459,87.28,467.33,90.48,471.93,94Z"/>
+                                    <path d="M521,100.88v56.7h-14.5v-56.7h-21V88.48h56.4v12.4Z"/>
+                                    <path d="M571.43,100.78v15.6h27.7v12.4h-27.7V145h32.1v12.5h-46.6v-69h46.6v12.4h-32.1Z"/>
+                                    <path d="M635.93,144.18l-4.6,13.4h-15.2L642,88.48h14.6l26.7,69.1h-15.7l-4.7-13.4Zm13.4-39.3-9.4,27.7H659Z"/>
+                                    <path d="M756.53,115.18l-18.9,40.4h-8.2l-18.6-40v42h-13.9V88.48h13.8l23.2,49.9,22.4-49.9h14v69.1h-13.8Z"/>
+                                    <path d="M282.77,31.08a91.7,91.7,0,0,0-91.4,84.4l49.2,20.3a26.25,26.25,0,0,1,14.6-4.5h1.4l21.9-31.7v-.4a34.6,34.6,0,1,1,34.6,34.6h-.8l-31.2,22.3v1.2a26,26,0,0,1-51.5,5.1l-35.2-14.5a91.79,91.79,0,1,0,88.4-116.8Z"/>
+                                    <path d="M248.77,170.38l-11.3-4.7a19.92,19.92,0,0,0,10,9.6,19.57,19.57,0,0,0,25.5-10.5,19.25,19.25,0,0,0,0-14.9,19.37,19.37,0,0,0-24.9-10.8l11.6,4.8a14.37,14.37,0,0,1,7.7,18.8A14.16,14.16,0,0,1,248.77,170.38Z"/>
+                                    <path d="M336.07,99.18a23.1,23.1,0,1,0-23.1,23.1A23.11,23.11,0,0,0,336.07,99.18Zm-40.3,0a17.3,17.3,0,1,1,17.3,17.3A17.31,17.31,0,0,1,295.77,99.18Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="card">
+                        <img src="./assets/unlock-the-cat.png" alt="Cat trapped in a pen with stone blocks 
+                        blocking the way out." />
+
+                        <h3>Unlock The Cat</h3>
+
+                        <p>
+                            Kitty is unable to reach her destination due to some rocks in her path. He could 
+                            jump over the rocks, but he just doesn't want to do that, as he claims to be very 
+                            tiring. So it's up to you to carry out the heavy labor for the comfort of this 
+                            little kitten.
+                        </p>
+                        
+                        <div class="button-container">
+                            <a class="button" target="_blank" 
+                                href="https://www.qubyteinteractive.com/games/unlock-the-cat/">
+                                <svg
+                                    xmlns:dc="http://purl.org/dc/elements/1.1/"
+                                    xmlns:cc="http://creativecommons.org/ns#"
+                                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                                    xmlns:svg="http://www.w3.org/2000/svg"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                                    viewBox="0 0 1000 245.19"
+                                    version="1.1"
+                                    id="svg24"
+                                    sodipodi:docname="Switch_wide.svg"
+                                    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+                                    <metadata
+                                        id="metadata30">
+                                        <rdf:RDF>
+                                        <cc:Work
+                                            rdf:about="">
+                                            <dc:format>image/svg+xml</dc:format>
+                                            <dc:type
+                                            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        </cc:Work>
+                                        </rdf:RDF>
+                                    </metadata>
+                                    <defs
+                                        id="defs28" />
+                                    <sodipodi:namedview
+                                        pagecolor="#ffffff"
+                                        bordercolor="#666666"
+                                        borderopacity="1"
+                                        objecttolerance="10"
+                                        gridtolerance="10"
+                                        guidetolerance="10"
+                                        inkscape:pageopacity="0"
+                                        inkscape:pageshadow="2"
+                                        inkscape:window-width="1828"
+                                        inkscape:window-height="1105"
+                                        id="namedview26"
+                                        showgrid="false"
+                                        inkscape:zoom="1.185"
+                                        inkscape:cx="520.98982"
+                                        inkscape:cy="110.23667"
+                                        inkscape:window-x="470"
+                                        inkscape:window-y="152"
+                                        inkscape:window-maximized="0"
+                                        inkscape:current-layer="svg24" />
+                                    <title
+                                        id="title7882">Switch Logo</title>
+                                    <path
+                                        d="M 692.39627,93.578996 V 51.859175 h -8.46591 V 79.261999 L 663.40784,51.859175 h -8.42546 v 41.719821 h 8.45648 V 65.677175 l 20.72163,27.901821 z M 557.41538,51.859175 h -35.34012 v 8.854467 h 13.33455 v 32.865354 h 8.97414 V 60.713642 h 13.03143 z m 34.15714,79.760135 h 25.15659 v 62.01389 h 16.93634 v -62.01389 h 24.58757 v -16.70473 h -66.6805 z m 28.83299,-45.769311 h -23.97827 v -9.782507 h 22.17194 V 68.52037 h -22.17194 v -9.00215 h 23.97827 v -7.659045 l -32.44409,0.01399 v 41.705828 l 32.44409,-0.01399 z m 92.57703,43.997151 c 8.88714,0 17.17422,4.74125 21.60922,12.21998 l 12.80905,-11.13803 c -7.83622,-11.66346 -20.78215,-18.58878 -34.87681,-18.58878 -23.16835,0 -42.01828,18.84838 -42.01828,42.01672 0,23.16526 18.84993,42.01208 42.01828,42.01208 14.09466,0 27.04059,-6.92376 34.87681,-18.58567 l -12.80905,-11.13803 c -4.435,7.47874 -12.72371,12.22152 -21.60922,12.22152 -13.76822,0 -24.97162,-10.99502 -24.97162,-24.5099 0,-13.51486 11.2034,-24.50989 24.97162,-24.50989 m 32.38193,-45.035565 h -9.10481 V 60.626587 h 9.10481 c 6.66885,0 12.09252,5.422118 12.09252,12.090948 0,6.668829 -5.42367,12.09405 -12.09252,12.09405 m -0.42132,-32.95241 h -17.25036 v 41.719821 h 17.25036 c 11.8283,0 21.44914,-9.358128 21.44914,-20.861461 0,-11.500231 -9.62084,-20.85836 -21.44914,-20.85836 m 73.5001,94.078675 H 781.67614 V 114.91458 H 765.3958 v 78.71862 h 16.28034 v -31.40102 h 36.76711 v 31.40102 h 16.29128 v -78.71862 h -16.29128 z m -2.84467,-60.232421 c -7.14921,0 -12.96308,-5.826295 -12.96308,-12.989457 0,-7.158498 5.81387,-12.98323 12.96308,-12.98323 7.14764,0 12.96144,5.824732 12.96144,12.98323 0,7.163162 -5.8138,12.989457 -12.96144,12.989457 m 0,-35.251524 c -12.25109,0 -22.22167,9.98769 -22.22167,22.26518 0,12.27749 9.97058,22.26518 22.22167,22.26518 12.25258,0 22.22162,-9.98769 22.22162,-22.26518 0,-12.27749 -9.96904,-22.26518 -22.22162,-22.26518 M 554.85043,193.6332 h 17.51773 V 114.91458 H 554.85043 Z M 423.47608,51.859175 h -9.28507 v 41.719821 h 9.28507 z M 502.9657,172.02556 486.28897,114.91458 h -13.97189 l -16.58346,56.90268 -15.1409,-56.90268 h -17.13687 l 22.27297,78.71862 h 18.91678 l 14.67763,-51.86299 14.58127,51.86299 h 18.9945 l 22.39421,-78.71862 H 518.16412 Z M 353.77514,65.677175 374.4967,93.578996 h 8.23579 V 51.859175 h -8.46584 V 79.261999 L 353.74406,51.859175 h -8.42542 v 41.719821 h 8.4565 z m 24.2161,80.140975 c -11.37278,-1.86695 -18.7178,-3.97641 -18.7178,-9.27262 0,-6.1201 8.17827,-8.47207 19.1546,-8.47207 10.20377,0 20.4371,3.88628 24.08707,5.42213 l 5.59468,-13.6268 c -3.96244,-1.57004 -16.53839,-6.06257 -30.48386,-6.06257 -17.00786,0 -35.08208,8.29485 -35.08208,23.6658 0,12.46713 8.79227,18.83438 31.35905,22.71598 15.90724,2.73593 24.66998,4.24692 24.42125,11.08674 -0.13988,3.76657 -3.05147,10.08719 -20.98425,10.08719 -14.42426,0 -24.58917,-5.22936 -28.11945,-7.3528 l -7.45074,13.45112 c 3.97175,2.08614 17.29542,8.33682 34.43851,8.33682 25.04463,0 38.28126,-8.67725 38.28126,-25.09284 0,-9.51204 -3.21162,-19.42198 -36.49824,-24.88608 M 463.40353,65.677175 484.122,93.578996 h 8.23576 V 51.859175 h -8.46739 V 79.261999 L 463.36934,51.859175 h -8.42542 v 41.719821 h 8.45961 z M 218.45389,185.32125 h -21.59831 c -6.98283,0 -13.54595,-2.71727 -18.47995,-7.65282 -4.93556,-4.93556 -7.6544,-11.49713 -7.6544,-18.48153 V 86.759384 c 0,-6.984399 2.71884,-13.545965 7.65283,-18.478417 4.93557,-4.937101 11.49869,-7.655931 18.48152,-7.655931 h 21.59831 z M 229.34941,48.639798 h -32.49383 c -21.05267,0 -38.11958,17.066909 -38.11958,38.119586 V 159.1869 c 0,21.05111 17.06691,38.11804 38.11958,38.11804 h 32.49383 c 0.60315,0 1.08972,-0.48812 1.08972,-1.08972 V 49.729498 c 0,-0.601593 -0.48657,-1.0897 -1.08972,-1.0897 m 45.37603,96.797502 c -8.30107,0 -15.03052,-6.72946 -15.03052,-15.03208 0,-8.30106 6.72945,-15.03049 15.03052,-15.03049 8.30105,0 15.03049,6.72943 15.03049,15.03049 0,8.30262 -6.72944,15.03208 -15.03049,15.03208 m -5.44388,-96.797502 h -22.99891 c -0.5363,0 -0.96847,0.433707 -0.96847,0.968448 V 196.21522 c 0,0.6016 0.48658,1.08972 1.08974,1.08972 h 22.87764 c 21.05265,0 38.11957,-17.06693 38.11957,-38.11804 V 86.759384 c 0,-21.052677 -17.06692,-38.119586 -38.11957,-38.119586 m -87.40053,44.600311 c 0,7.718121 6.25845,13.976561 13.97657,13.976561 7.72124,0 13.97812,-6.25844 13.97812,-13.976561 0,-7.72122 -6.25688,-13.97811 -13.97812,-13.97811 -7.71812,0 -13.97657,6.25689 -13.97657,13.97811"
+                                        id="path22"
+                                        inkscape:connector-curvature="0"
+                                        style="stroke-width:0.8307035" />
+                                </svg>
+                            </a>
+
+                            <a class="button" target="_blank" 
+                                href="https://store.steampowered.com/app/1554550/Unlock_The_Cat/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19" fill="#000000">
+                                    <title>Steam Logo</title>
+                                    <path d="M471.93,94l-6.1,10.8a30.91,30.91,0,0,0-16.8-5.3c-6.4,0-10.4,2.6-10.4,7.4,0,5.8,7,7.1,17.5,10.9,11.2,4,17.7,8.7,17.7,18.9,0,14.1-11.1,22-27,22-7.8,0-17.1-2-24.3-6.4l4.5-12a42,42,0,0,0,19.1,4.9c8.4,0,12.4-3.1,12.4-7.7,0-5.2-6.1-6.8-15.9-10.1-11.2-3.7-19-8.7-19-20.1,0-12.9,10.3-20.2,25.1-20.2C459,87.28,467.33,90.48,471.93,94Z"/>
+                                    <path d="M521,100.88v56.7h-14.5v-56.7h-21V88.48h56.4v12.4Z"/>
+                                    <path d="M571.43,100.78v15.6h27.7v12.4h-27.7V145h32.1v12.5h-46.6v-69h46.6v12.4h-32.1Z"/>
+                                    <path d="M635.93,144.18l-4.6,13.4h-15.2L642,88.48h14.6l26.7,69.1h-15.7l-4.7-13.4Zm13.4-39.3-9.4,27.7H659Z"/>
+                                    <path d="M756.53,115.18l-18.9,40.4h-8.2l-18.6-40v42h-13.9V88.48h13.8l23.2,49.9,22.4-49.9h14v69.1h-13.8Z"/>
+                                    <path d="M282.77,31.08a91.7,91.7,0,0,0-91.4,84.4l49.2,20.3a26.25,26.25,0,0,1,14.6-4.5h1.4l21.9-31.7v-.4a34.6,34.6,0,1,1,34.6,34.6h-.8l-31.2,22.3v1.2a26,26,0,0,1-51.5,5.1l-35.2-14.5a91.79,91.79,0,1,0,88.4-116.8Z"/>
+                                    <path d="M248.77,170.38l-11.3-4.7a19.92,19.92,0,0,0,10,9.6,19.57,19.57,0,0,0,25.5-10.5,19.25,19.25,0,0,0,0-14.9,19.37,19.37,0,0,0-24.9-10.8l11.6,4.8a14.37,14.37,0,0,1,7.7,18.8A14.16,14.16,0,0,1,248.77,170.38Z"/>
+                                    <path d="M336.07,99.18a23.1,23.1,0,1,0-23.1,23.1A23.11,23.11,0,0,0,336.07,99.18Zm-40.3,0a17.3,17.3,0,1,1,17.3,17.3A17.31,17.31,0,0,1,295.77,99.18Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="card">
+                        <img src="./assets/mining-cats.png" alt="Three cute cats in front of a mine." />
+
+                        <h3>Mining Cats</h3>
+
+                        <p>
+                            Mining Cats is a type of logic puzzle that involves blasting rocks and creating 
+                            paths that connect mines of gemstones of the same color.
+                        </p>
+                        
+                        <div class="button-container">
+                            <a class="button" target="_blank" 
+                                href="https://store.steampowered.com/app/1837920/Mining_Cats/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19" fill="#000000">
+                                    <title>Steam Logo</title>
+                                    <path d="M471.93,94l-6.1,10.8a30.91,30.91,0,0,0-16.8-5.3c-6.4,0-10.4,2.6-10.4,7.4,0,5.8,7,7.1,17.5,10.9,11.2,4,17.7,8.7,17.7,18.9,0,14.1-11.1,22-27,22-7.8,0-17.1-2-24.3-6.4l4.5-12a42,42,0,0,0,19.1,4.9c8.4,0,12.4-3.1,12.4-7.7,0-5.2-6.1-6.8-15.9-10.1-11.2-3.7-19-8.7-19-20.1,0-12.9,10.3-20.2,25.1-20.2C459,87.28,467.33,90.48,471.93,94Z"/>
+                                    <path d="M521,100.88v56.7h-14.5v-56.7h-21V88.48h56.4v12.4Z"/>
+                                    <path d="M571.43,100.78v15.6h27.7v12.4h-27.7V145h32.1v12.5h-46.6v-69h46.6v12.4h-32.1Z"/>
+                                    <path d="M635.93,144.18l-4.6,13.4h-15.2L642,88.48h14.6l26.7,69.1h-15.7l-4.7-13.4Zm13.4-39.3-9.4,27.7H659Z"/>
+                                    <path d="M756.53,115.18l-18.9,40.4h-8.2l-18.6-40v42h-13.9V88.48h13.8l23.2,49.9,22.4-49.9h14v69.1h-13.8Z"/>
+                                    <path d="M282.77,31.08a91.7,91.7,0,0,0-91.4,84.4l49.2,20.3a26.25,26.25,0,0,1,14.6-4.5h1.4l21.9-31.7v-.4a34.6,34.6,0,1,1,34.6,34.6h-.8l-31.2,22.3v1.2a26,26,0,0,1-51.5,5.1l-35.2-14.5a91.79,91.79,0,1,0,88.4-116.8Z"/>
+                                    <path d="M248.77,170.38l-11.3-4.7a19.92,19.92,0,0,0,10,9.6,19.57,19.57,0,0,0,25.5-10.5,19.25,19.25,0,0,0,0-14.9,19.37,19.37,0,0,0-24.9-10.8l11.6,4.8a14.37,14.37,0,0,1,7.7,18.8A14.16,14.16,0,0,1,248.77,170.38Z"/>
+                                    <path d="M336.07,99.18a23.1,23.1,0,1,0-23.1,23.1A23.11,23.11,0,0,0,336.07,99.18Zm-40.3,0a17.3,17.3,0,1,1,17.3,17.3A17.31,17.31,0,0,1,295.77,99.18Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+    
+                    <div class="card">
+                        <img src="./assets/farm-kitten-puzzle-pipes.png" alt="Farm with exposed underground 
+                        irrigation pipeline." />
+                        
+                        <h3>Farm Kitten - Puzzle Pipes</h3>
+
+                        <p>
+                            Help the kitten rotate the pipes to bring water to his farm. The more the kitten 
+                            plants, the more money he has to fulfill his dreams as a cat.
+                        </p>
+
+                        <div class="button-container">
+                            <a class="button" target="_blank" 
+                                href="https://store.steampowered.com/app/1721270/Farm_Kitten__Puzzle_Pipes/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19" fill="#000000">
+                                    <title>Steam Logo</title>
+                                    <path d="M471.93,94l-6.1,10.8a30.91,30.91,0,0,0-16.8-5.3c-6.4,0-10.4,2.6-10.4,7.4,0,5.8,7,7.1,17.5,10.9,11.2,4,17.7,8.7,17.7,18.9,0,14.1-11.1,22-27,22-7.8,0-17.1-2-24.3-6.4l4.5-12a42,42,0,0,0,19.1,4.9c8.4,0,12.4-3.1,12.4-7.7,0-5.2-6.1-6.8-15.9-10.1-11.2-3.7-19-8.7-19-20.1,0-12.9,10.3-20.2,25.1-20.2C459,87.28,467.33,90.48,471.93,94Z"/>
+                                    <path d="M521,100.88v56.7h-14.5v-56.7h-21V88.48h56.4v12.4Z"/>
+                                    <path d="M571.43,100.78v15.6h27.7v12.4h-27.7V145h32.1v12.5h-46.6v-69h46.6v12.4h-32.1Z"/>
+                                    <path d="M635.93,144.18l-4.6,13.4h-15.2L642,88.48h14.6l26.7,69.1h-15.7l-4.7-13.4Zm13.4-39.3-9.4,27.7H659Z"/>
+                                    <path d="M756.53,115.18l-18.9,40.4h-8.2l-18.6-40v42h-13.9V88.48h13.8l23.2,49.9,22.4-49.9h14v69.1h-13.8Z"/>
+                                    <path d="M282.77,31.08a91.7,91.7,0,0,0-91.4,84.4l49.2,20.3a26.25,26.25,0,0,1,14.6-4.5h1.4l21.9-31.7v-.4a34.6,34.6,0,1,1,34.6,34.6h-.8l-31.2,22.3v1.2a26,26,0,0,1-51.5,5.1l-35.2-14.5a91.79,91.79,0,1,0,88.4-116.8Z"/>
+                                    <path d="M248.77,170.38l-11.3-4.7a19.92,19.92,0,0,0,10,9.6,19.57,19.57,0,0,0,25.5-10.5,19.25,19.25,0,0,0,0-14.9,19.37,19.37,0,0,0-24.9-10.8l11.6,4.8a14.37,14.37,0,0,1,7.7,18.8A14.16,14.16,0,0,1,248.77,170.38Z"/>
+                                    <path d="M336.07,99.18a23.1,23.1,0,1,0-23.1,23.1A23.11,23.11,0,0,0,336.07,99.18Zm-40.3,0a17.3,17.3,0,1,1,17.3,17.3A17.31,17.31,0,0,1,295.77,99.18Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/cat-slide-tiles.png" alt="Cat in front of a puzzle scenario with 
+                        the path blocked by objects." />
+                        
+                        <h3>Cat Slide Tiles</h3>
+
+                        <p>
+                            Move the sliding tiles to unblock a path for the kitten to walk to the exit.
+                        </p>
+
+                        <div class="button-container">
+                            <a class="button" target="_blank" 
+                                href="https://store.steampowered.com/app/1646030/Cat_Slide_Tiles/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19" fill="#000000">
+                                    <title>Steam Logo</title>
+                                    <path d="M471.93,94l-6.1,10.8a30.91,30.91,0,0,0-16.8-5.3c-6.4,0-10.4,2.6-10.4,7.4,0,5.8,7,7.1,17.5,10.9,11.2,4,17.7,8.7,17.7,18.9,0,14.1-11.1,22-27,22-7.8,0-17.1-2-24.3-6.4l4.5-12a42,42,0,0,0,19.1,4.9c8.4,0,12.4-3.1,12.4-7.7,0-5.2-6.1-6.8-15.9-10.1-11.2-3.7-19-8.7-19-20.1,0-12.9,10.3-20.2,25.1-20.2C459,87.28,467.33,90.48,471.93,94Z"/>
+                                    <path d="M521,100.88v56.7h-14.5v-56.7h-21V88.48h56.4v12.4Z"/>
+                                    <path d="M571.43,100.78v15.6h27.7v12.4h-27.7V145h32.1v12.5h-46.6v-69h46.6v12.4h-32.1Z"/>
+                                    <path d="M635.93,144.18l-4.6,13.4h-15.2L642,88.48h14.6l26.7,69.1h-15.7l-4.7-13.4Zm13.4-39.3-9.4,27.7H659Z"/>
+                                    <path d="M756.53,115.18l-18.9,40.4h-8.2l-18.6-40v42h-13.9V88.48h13.8l23.2,49.9,22.4-49.9h14v69.1h-13.8Z"/>
+                                    <path d="M282.77,31.08a91.7,91.7,0,0,0-91.4,84.4l49.2,20.3a26.25,26.25,0,0,1,14.6-4.5h1.4l21.9-31.7v-.4a34.6,34.6,0,1,1,34.6,34.6h-.8l-31.2,22.3v1.2a26,26,0,0,1-51.5,5.1l-35.2-14.5a91.79,91.79,0,1,0,88.4-116.8Z"/>
+                                    <path d="M248.77,170.38l-11.3-4.7a19.92,19.92,0,0,0,10,9.6,19.57,19.57,0,0,0,25.5-10.5,19.25,19.25,0,0,0,0-14.9,19.37,19.37,0,0,0-24.9-10.8l11.6,4.8a14.37,14.37,0,0,1,7.7,18.8A14.16,14.16,0,0,1,248.77,170.38Z"/>
+                                    <path d="M336.07,99.18a23.1,23.1,0,1,0-23.1,23.1A23.11,23.11,0,0,0,336.07,99.18Zm-40.3,0a17.3,17.3,0,1,1,17.3,17.3A17.31,17.31,0,0,1,295.77,99.18Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/give-me-more-pills.png" alt="Car jumping off a ramp and running 
+                        over character, with pills flying across the screen." />
+                        
+                        <h3>Give Me More Pills</h3>
+
+                        <p>
+                            Set up a schedule for your character to take pills at the right time and in the 
+                            right order. The side effects of the pills make him jump, walk, run. Then press 
+                            Play. The character starts performing the action that each pill causes at the 
+                            exact time he takes it.  Reach the highlighted area. Survive! 
+                        </p>
+
+                        <div class="button-container">
+                            <a class="button" target="_blank" 
+                                href="https://store.steampowered.com/agecheck/app/1752610/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19" fill="#000000">
+                                    <title>Steam Logo</title>
+                                    <path d="M471.93,94l-6.1,10.8a30.91,30.91,0,0,0-16.8-5.3c-6.4,0-10.4,2.6-10.4,7.4,0,5.8,7,7.1,17.5,10.9,11.2,4,17.7,8.7,17.7,18.9,0,14.1-11.1,22-27,22-7.8,0-17.1-2-24.3-6.4l4.5-12a42,42,0,0,0,19.1,4.9c8.4,0,12.4-3.1,12.4-7.7,0-5.2-6.1-6.8-15.9-10.1-11.2-3.7-19-8.7-19-20.1,0-12.9,10.3-20.2,25.1-20.2C459,87.28,467.33,90.48,471.93,94Z"/>
+                                    <path d="M521,100.88v56.7h-14.5v-56.7h-21V88.48h56.4v12.4Z"/>
+                                    <path d="M571.43,100.78v15.6h27.7v12.4h-27.7V145h32.1v12.5h-46.6v-69h46.6v12.4h-32.1Z"/>
+                                    <path d="M635.93,144.18l-4.6,13.4h-15.2L642,88.48h14.6l26.7,69.1h-15.7l-4.7-13.4Zm13.4-39.3-9.4,27.7H659Z"/>
+                                    <path d="M756.53,115.18l-18.9,40.4h-8.2l-18.6-40v42h-13.9V88.48h13.8l23.2,49.9,22.4-49.9h14v69.1h-13.8Z"/>
+                                    <path d="M282.77,31.08a91.7,91.7,0,0,0-91.4,84.4l49.2,20.3a26.25,26.25,0,0,1,14.6-4.5h1.4l21.9-31.7v-.4a34.6,34.6,0,1,1,34.6,34.6h-.8l-31.2,22.3v1.2a26,26,0,0,1-51.5,5.1l-35.2-14.5a91.79,91.79,0,1,0,88.4-116.8Z"/>
+                                    <path d="M248.77,170.38l-11.3-4.7a19.92,19.92,0,0,0,10,9.6,19.57,19.57,0,0,0,25.5-10.5,19.25,19.25,0,0,0,0-14.9,19.37,19.37,0,0,0-24.9-10.8l11.6,4.8a14.37,14.37,0,0,1,7.7,18.8A14.16,14.16,0,0,1,248.77,170.38Z"/>
+                                    <path d="M336.07,99.18a23.1,23.1,0,1,0-23.1,23.1A23.11,23.11,0,0,0,336.07,99.18Zm-40.3,0a17.3,17.3,0,1,1,17.3,17.3A17.31,17.31,0,0,1,295.77,99.18Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/underland.png" alt="Character in front of an excavation containing 
+                        building elements and an apocalyptic city in the background." />
+                        
+                        <h3>Underland</h3>
+
+                        <p>
+                            Use the elements at your disposal, such as excavators, pumps, plumbing, among 
+                            others, to drill the soil to the indicated location. The dynamic scenario, fluid 
+                            mechanics and the laws of physics must be manipulated correctly to achieve the 
+                            goal. Find the city of Underland!
+                        </p>
+
+                        <div class="button-container">
+                            <a class="button" target="_blank" 
+                                href="https://www.qubyteinteractive.com/games/underland/">
+                                <svg
+                                    xmlns:dc="http://purl.org/dc/elements/1.1/"
+                                    xmlns:cc="http://creativecommons.org/ns#"
+                                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                                    xmlns:svg="http://www.w3.org/2000/svg"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                                    viewBox="0 0 1000 245.19"
+                                    version="1.1"
+                                    id="svg24"
+                                    sodipodi:docname="Switch_wide.svg"
+                                    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+                                    <metadata
+                                        id="metadata30">
+                                        <rdf:RDF>
+                                        <cc:Work
+                                            rdf:about="">
+                                            <dc:format>image/svg+xml</dc:format>
+                                            <dc:type
+                                            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                                        </cc:Work>
+                                        </rdf:RDF>
+                                    </metadata>
+                                    <defs
+                                        id="defs28" />
+                                    <sodipodi:namedview
+                                        pagecolor="#ffffff"
+                                        bordercolor="#666666"
+                                        borderopacity="1"
+                                        objecttolerance="10"
+                                        gridtolerance="10"
+                                        guidetolerance="10"
+                                        inkscape:pageopacity="0"
+                                        inkscape:pageshadow="2"
+                                        inkscape:window-width="1828"
+                                        inkscape:window-height="1105"
+                                        id="namedview26"
+                                        showgrid="false"
+                                        inkscape:zoom="1.185"
+                                        inkscape:cx="520.98982"
+                                        inkscape:cy="110.23667"
+                                        inkscape:window-x="470"
+                                        inkscape:window-y="152"
+                                        inkscape:window-maximized="0"
+                                        inkscape:current-layer="svg24" />
+                                    <title
+                                        id="title7882">Switch Logo</title>
+                                    <path
+                                        d="M 692.39627,93.578996 V 51.859175 h -8.46591 V 79.261999 L 663.40784,51.859175 h -8.42546 v 41.719821 h 8.45648 V 65.677175 l 20.72163,27.901821 z M 557.41538,51.859175 h -35.34012 v 8.854467 h 13.33455 v 32.865354 h 8.97414 V 60.713642 h 13.03143 z m 34.15714,79.760135 h 25.15659 v 62.01389 h 16.93634 v -62.01389 h 24.58757 v -16.70473 h -66.6805 z m 28.83299,-45.769311 h -23.97827 v -9.782507 h 22.17194 V 68.52037 h -22.17194 v -9.00215 h 23.97827 v -7.659045 l -32.44409,0.01399 v 41.705828 l 32.44409,-0.01399 z m 92.57703,43.997151 c 8.88714,0 17.17422,4.74125 21.60922,12.21998 l 12.80905,-11.13803 c -7.83622,-11.66346 -20.78215,-18.58878 -34.87681,-18.58878 -23.16835,0 -42.01828,18.84838 -42.01828,42.01672 0,23.16526 18.84993,42.01208 42.01828,42.01208 14.09466,0 27.04059,-6.92376 34.87681,-18.58567 l -12.80905,-11.13803 c -4.435,7.47874 -12.72371,12.22152 -21.60922,12.22152 -13.76822,0 -24.97162,-10.99502 -24.97162,-24.5099 0,-13.51486 11.2034,-24.50989 24.97162,-24.50989 m 32.38193,-45.035565 h -9.10481 V 60.626587 h 9.10481 c 6.66885,0 12.09252,5.422118 12.09252,12.090948 0,6.668829 -5.42367,12.09405 -12.09252,12.09405 m -0.42132,-32.95241 h -17.25036 v 41.719821 h 17.25036 c 11.8283,0 21.44914,-9.358128 21.44914,-20.861461 0,-11.500231 -9.62084,-20.85836 -21.44914,-20.85836 m 73.5001,94.078675 H 781.67614 V 114.91458 H 765.3958 v 78.71862 h 16.28034 v -31.40102 h 36.76711 v 31.40102 h 16.29128 v -78.71862 h -16.29128 z m -2.84467,-60.232421 c -7.14921,0 -12.96308,-5.826295 -12.96308,-12.989457 0,-7.158498 5.81387,-12.98323 12.96308,-12.98323 7.14764,0 12.96144,5.824732 12.96144,12.98323 0,7.163162 -5.8138,12.989457 -12.96144,12.989457 m 0,-35.251524 c -12.25109,0 -22.22167,9.98769 -22.22167,22.26518 0,12.27749 9.97058,22.26518 22.22167,22.26518 12.25258,0 22.22162,-9.98769 22.22162,-22.26518 0,-12.27749 -9.96904,-22.26518 -22.22162,-22.26518 M 554.85043,193.6332 h 17.51773 V 114.91458 H 554.85043 Z M 423.47608,51.859175 h -9.28507 v 41.719821 h 9.28507 z M 502.9657,172.02556 486.28897,114.91458 h -13.97189 l -16.58346,56.90268 -15.1409,-56.90268 h -17.13687 l 22.27297,78.71862 h 18.91678 l 14.67763,-51.86299 14.58127,51.86299 h 18.9945 l 22.39421,-78.71862 H 518.16412 Z M 353.77514,65.677175 374.4967,93.578996 h 8.23579 V 51.859175 h -8.46584 V 79.261999 L 353.74406,51.859175 h -8.42542 v 41.719821 h 8.4565 z m 24.2161,80.140975 c -11.37278,-1.86695 -18.7178,-3.97641 -18.7178,-9.27262 0,-6.1201 8.17827,-8.47207 19.1546,-8.47207 10.20377,0 20.4371,3.88628 24.08707,5.42213 l 5.59468,-13.6268 c -3.96244,-1.57004 -16.53839,-6.06257 -30.48386,-6.06257 -17.00786,0 -35.08208,8.29485 -35.08208,23.6658 0,12.46713 8.79227,18.83438 31.35905,22.71598 15.90724,2.73593 24.66998,4.24692 24.42125,11.08674 -0.13988,3.76657 -3.05147,10.08719 -20.98425,10.08719 -14.42426,0 -24.58917,-5.22936 -28.11945,-7.3528 l -7.45074,13.45112 c 3.97175,2.08614 17.29542,8.33682 34.43851,8.33682 25.04463,0 38.28126,-8.67725 38.28126,-25.09284 0,-9.51204 -3.21162,-19.42198 -36.49824,-24.88608 M 463.40353,65.677175 484.122,93.578996 h 8.23576 V 51.859175 h -8.46739 V 79.261999 L 463.36934,51.859175 h -8.42542 v 41.719821 h 8.45961 z M 218.45389,185.32125 h -21.59831 c -6.98283,0 -13.54595,-2.71727 -18.47995,-7.65282 -4.93556,-4.93556 -7.6544,-11.49713 -7.6544,-18.48153 V 86.759384 c 0,-6.984399 2.71884,-13.545965 7.65283,-18.478417 4.93557,-4.937101 11.49869,-7.655931 18.48152,-7.655931 h 21.59831 z M 229.34941,48.639798 h -32.49383 c -21.05267,0 -38.11958,17.066909 -38.11958,38.119586 V 159.1869 c 0,21.05111 17.06691,38.11804 38.11958,38.11804 h 32.49383 c 0.60315,0 1.08972,-0.48812 1.08972,-1.08972 V 49.729498 c 0,-0.601593 -0.48657,-1.0897 -1.08972,-1.0897 m 45.37603,96.797502 c -8.30107,0 -15.03052,-6.72946 -15.03052,-15.03208 0,-8.30106 6.72945,-15.03049 15.03052,-15.03049 8.30105,0 15.03049,6.72943 15.03049,15.03049 0,8.30262 -6.72944,15.03208 -15.03049,15.03208 m -5.44388,-96.797502 h -22.99891 c -0.5363,0 -0.96847,0.433707 -0.96847,0.968448 V 196.21522 c 0,0.6016 0.48658,1.08972 1.08974,1.08972 h 22.87764 c 21.05265,0 38.11957,-17.06693 38.11957,-38.11804 V 86.759384 c 0,-21.052677 -17.06692,-38.119586 -38.11957,-38.119586 m -87.40053,44.600311 c 0,7.718121 6.25845,13.976561 13.97657,13.976561 7.72124,0 13.97812,-6.25844 13.97812,-13.976561 0,-7.72122 -6.25688,-13.97811 -13.97812,-13.97811 -7.71812,0 -13.97657,6.25689 -13.97657,13.97811"
+                                        id="path22"
+                                        inkscape:connector-curvature="0"
+                                        style="stroke-width:0.8307035" />
+                                </svg>
+                            </a>
+
+                            <a class="button" target="_blank" 
+                                href="https://store.playstation.com/pt-br/product/UP2158-CUSA29609_00-3707429945542009/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19">
+                                    <title>PS4 Logo</title>
+                                    <path d="M611.83,142.26V104.49c0-7.71,3.6-13.23,11.27-13.23h47.32a.61.61,0,0,0,.57-.57V83.17a.51.51,0,0,0,0-.19H613.08c-12.54,1.59-18.67,10.33-18.67,21.51v37.78c0,7.71-3.7,13.23-11.27,13.23h-50a.55.55,0,0,0-.57.57v7.52a.66.66,0,0,0,.42.63h56.74C604.55,163.82,611.83,154.38,611.83,142.26Z"/>
+                                    <path d="M417.42,164.21H434a.66.66,0,0,0,.42-.63V139.5c0-7.71,4.35-13,10.69-13h68.43c15.43,0,22.91-9.52,22.91-22,0-11.17-6.12-19.91-18.67-21.51H417.11c0,.06-.08.11-.08.19v7.52a.5.5,0,0,0,.57.57h90.2c7.67,0,11.26,5.52,11.26,13.23s-3.6,13.23-11.26,13.23H436.44c-11.07,0-19.4,9.42-19.4,21.79v24.08A.6.6,0,0,0,417.42,164.21Z"/>
+                                    <path d="M670.71,155.49h90.87a.43.43,0,0,1,.47.38v7.71a.55.55,0,0,0,.57.57H779a.54.54,0,0,0,.57-.57v-7.52a.62.62,0,0,1,.57-.57H796.4a.55.55,0,0,0,.57-.57v-7.61a.55.55,0,0,0-.57-.57H780.12a.62.62,0,0,1-.57-.57V91.26c0-4.48-1.66-7.33-4.46-8.28h-4.74a18.2,18.2,0,0,0-4.8,2.09L667.68,145.5c-3.79,2.38-5.11,5-4.17,7C664.27,154.25,666.44,155.49,670.71,155.49ZM684.9,145.4l75.81-46.91a.86.86,0,0,1,1.43.76v46.91a.62.62,0,0,1-.57.57h-76.2c-.66,0-.95-.19-1-.38C684.23,146,684.42,145.69,684.9,145.4Z"/>
+                                    <path d="M252.66,52.66C260,54,267.3,56,274.52,58c4.13,1.2,8.25,2.44,12.34,3.76a89.17,89.17,0,0,1,18.66,7.83,36.79,36.79,0,0,1,7.26,5.56,27.67,27.67,0,0,1,5.61,7.88c2.54,5.3,3.41,11.23,3.67,17.05a52.25,52.25,0,0,1-.6,11.39,26.78,26.78,0,0,1-3.38,9.31,16.85,16.85,0,0,1-6.28,6.06,16.6,16.6,0,0,1-8.17,1.93,28.75,28.75,0,0,1-12.3-3.11c-.07-12.8,0-25.59,0-38.39a36.67,36.67,0,0,0-.34-6.94,8.13,8.13,0,0,0-2.44-4.75,7.09,7.09,0,0,0-3.31-1.55A3.39,3.39,0,0,0,282,75.32a9.22,9.22,0,0,0-1.63,5.57q0,51.38,0,102.77l-27.64-8.77Q252.65,113.77,252.66,52.66Z"/>
+                                    <path d="M211.24,139.34c12-4.25,24-8.55,36-12.79,0,4.72,0,9.44,0,14.16a16.81,16.81,0,0,1,0,1.92c-9.5,3.37-19,6.79-28.47,10.18a10.16,10.16,0,0,0-3.68,2.06,1.79,1.79,0,0,0-.6,1.84,3.28,3.28,0,0,0,1.89,1.56,19.69,19.69,0,0,0,6.58,1.07,36.92,36.92,0,0,0,7.38-.76,30.18,30.18,0,0,0,4.77-1.46c4.06-1.47,8.11-2.95,12.17-4.4,0,4,0,8,0,12,0,.8,0,1.6,0,2.4a93.85,93.85,0,0,1-15.11,1.58A90.16,90.16,0,0,1,202,164.14a27.13,27.13,0,0,1-9-4.17,10.22,10.22,0,0,1-3.44-4.31,5.94,5.94,0,0,1,.18-4.63,8.83,8.83,0,0,1,3.13-3.43,52.64,52.64,0,0,1,9.6-5C205.33,141.36,208.31,140.41,211.24,139.34Z"/>
+                                    <path d="M307.91,134c2.72-.32,5.47-.39,8.21-.49a90.36,90.36,0,0,1,26.69,3.86c1.69.51,3.33,1.18,5,1.72a25.36,25.36,0,0,1,8.41,4.59,7.32,7.32,0,0,1,2.71,5.12,6.39,6.39,0,0,1-1.73,4.45,24.51,24.51,0,0,1-7.43,5.22,82.45,82.45,0,0,1-9,3.53l-55.24,19.84q0-7.74,0-15.47c0-.21-.09-.56.21-.62l42-15c1.89-.71,3.93-1.22,5.54-2.51a2.08,2.08,0,0,0,1-2.22,3.33,3.33,0,0,0-1.88-1.52,19.3,19.3,0,0,0-6.61-1.05A33.08,33.08,0,0,0,315.47,145c-10,3.5-19.94,7-29.93,10.52q0-8.31,0-16.61A103,103,0,0,1,307.91,134Z"/>
+                                </svg>
+                            </a>
+
+                            <a class="button" target="_blank" 
+                                href="https://www.xbox.com/en-us/games/store/underland/9nl82ph84j87?activetab=pivot:overviewtab">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 245.19">
+                                    <defs>
+                                      <style>
+                                          .a { fill: #fff; }
+                                          .b { mask: url("#a"); }
+                                          .c { mask: url("#b"); }
+                                      </style>
+                                      <mask id="a" x="192.17" y="59.19" width="69.29" height="19.6" maskUnits="userSpaceOnUse">
+                                        <polygon class="a" points="261.46 59.19 192.17 59.19 192.17 78.79 261.46 78.79 261.46 59.19"/>
+                                      </mask>
+                                      <mask id="b" x="770.99" y="83.52" width="57.32" height="80.17" maskUnits="userSpaceOnUse">
+                                        <polygon class="a" points="828.3 163.69 828.3 83.52 770.99 83.52 770.99 163.69 828.3 163.69"/>
+                                      </mask>
+                                    </defs>
+                                    <title>XBox One Logo</title>
+                                    <g class="b">
+                                      <path d="M226.87,59.19a65.16,65.16,0,0,1,34.46,9.69.25.25,0,0,1,.11.33.25.25,0,0,1-.32.11c-12.8-2.77-32.27,8.3-34.12,9.41a.21.21,0,0,1-.28,0c-4.88-2.81-22.88-12.25-34.22-9.34a.25.25,0,0,1-.2-.45,65.1,65.1,0,0,1,34.56-9.75"/>
+                                    </g>
+                                    <path d="M180.45,78.23l-.06.06h0a66.25,66.25,0,0,0-6.16,87.23.3.3,0,0,0,.36.11.27.27,0,0,0,.08-.34c-5-15.61,20.73-53.45,34.05-69.31a.35.35,0,0,0,.1-.2.3.3,0,0,0-.13-.22c-22.4-22.32-28.39-17.22-28.3-17.29"/><path d="M273.29,78.23l.06.06h0a66.26,66.26,0,0,1,6.16,87.23.29.29,0,0,1-.36.11.29.29,0,0,1-.08-.34c5-15.61-20.71-53.48-34-69.34a.36.36,0,0,1-.1-.19.29.29,0,0,1,.13-.23c22.41-22.32,28.35-17.18,28.27-17.25"/><polygon points="583.65 163.76 557.72 128.99 531.83 163.76 521.16 163.76 552.33 121.75 523.86 83.57 534.53 83.57 557.72 114.71 580.92 83.57 591.59 83.57 563.14 121.75 594.32 163.76 583.65 163.76"/><polygon points="381.63 163.75 350.42 121.75 378.89 83.57 368.22 83.57 345.02 114.72 321.84 83.57 311.2 83.57 339.65 121.75 308.45 163.75 319.13 163.75 345.03 128.99 370.95 163.75 381.63 163.75"/><path d="M226.87,112.3a.39.39,0,0,1,.21.1c19.8,15.07,53.68,52.33,43.33,62.86h0a66.08,66.08,0,0,1-87.1,0h0c-10.33-10.53,23.55-47.79,43.33-62.86a.46.46,0,0,1,.23-.1"/>
+                                    <g class="c">
+                                      <polygon points="780.07 155.85 780.07 126.2 824.72 126.2 824.72 118.36 780.07 118.36 780.07 91.35 827.75 91.35 827.75 83.52 770.99 83.52 770.99 163.69 828.3 163.69 828.3 155.85 780.07 155.85"/>
+                                    </g>
+                                    <path d="M419,155.39H395.16V126.2H419c9,0,19.86,2.47,19.86,14,0,13.24-12.44,15.22-19.86,15.22ZM395.16,91.93H419c6.45,0,17.27,1.59,17.27,12.74,0,8.44-6.3,13.46-17.27,13.46H395.16Zm45.78,32.85a22.89,22.89,0,0,0-5.32-3.34,18.14,18.14,0,0,0,9.76-16.06c0-5.13-1.91-21.81-26.38-21.81H386v34.57h-11c-1.42,1.83-4.66,6.24-5.89,8H386v37.57h33c17.86,0,28.94-9,28.94-23.41a19.7,19.7,0,0,0-7-15.57Z"/><path d="M490.83,157c-17.37,0-29.54-13.75-29.54-33.44s12.17-33.42,29.54-33.42,29.44,13.75,29.44,33.42S508.16,157,490.83,157m0-75.33c-22.8,0-38.73,17.23-38.73,41.89s15.94,41.92,38.73,41.92,38.66-17.21,38.66-41.92S513.6,81.72,490.83,81.72"/><polygon points="751.8 83.57 751.8 149.37 702.75 83.53 694.7 83.51 694.7 163.62 703.73 163.62 703.73 99.28 751.79 163.67 760.84 163.69 760.84 83.57 751.8 83.57"/><path d="M647.8,157c-17.37,0-29.53-13.75-29.53-33.45s12.17-33.42,29.53-33.42,29.45,13.75,29.45,33.42S665.15,157,647.8,157m0-75.34c-22.8,0-38.73,17.23-38.73,41.89S625,165.54,647.8,165.54s38.67-17.24,38.67-41.95S670.58,81.71,647.8,81.71"/>
+                                </svg>
+                            </a>
+
+                            <a class="button" target="_blank" 
+                                href="https://store.steampowered.com/app/1528050/Underland/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19" fill="#000000">
+                                    <title>Steam Logo</title>
+                                    <path d="M471.93,94l-6.1,10.8a30.91,30.91,0,0,0-16.8-5.3c-6.4,0-10.4,2.6-10.4,7.4,0,5.8,7,7.1,17.5,10.9,11.2,4,17.7,8.7,17.7,18.9,0,14.1-11.1,22-27,22-7.8,0-17.1-2-24.3-6.4l4.5-12a42,42,0,0,0,19.1,4.9c8.4,0,12.4-3.1,12.4-7.7,0-5.2-6.1-6.8-15.9-10.1-11.2-3.7-19-8.7-19-20.1,0-12.9,10.3-20.2,25.1-20.2C459,87.28,467.33,90.48,471.93,94Z"/>
+                                    <path d="M521,100.88v56.7h-14.5v-56.7h-21V88.48h56.4v12.4Z"/>
+                                    <path d="M571.43,100.78v15.6h27.7v12.4h-27.7V145h32.1v12.5h-46.6v-69h46.6v12.4h-32.1Z"/>
+                                    <path d="M635.93,144.18l-4.6,13.4h-15.2L642,88.48h14.6l26.7,69.1h-15.7l-4.7-13.4Zm13.4-39.3-9.4,27.7H659Z"/>
+                                    <path d="M756.53,115.18l-18.9,40.4h-8.2l-18.6-40v42h-13.9V88.48h13.8l23.2,49.9,22.4-49.9h14v69.1h-13.8Z"/>
+                                    <path d="M282.77,31.08a91.7,91.7,0,0,0-91.4,84.4l49.2,20.3a26.25,26.25,0,0,1,14.6-4.5h1.4l21.9-31.7v-.4a34.6,34.6,0,1,1,34.6,34.6h-.8l-31.2,22.3v1.2a26,26,0,0,1-51.5,5.1l-35.2-14.5a91.79,91.79,0,1,0,88.4-116.8Z"/>
+                                    <path d="M248.77,170.38l-11.3-4.7a19.92,19.92,0,0,0,10,9.6,19.57,19.57,0,0,0,25.5-10.5,19.25,19.25,0,0,0,0-14.9,19.37,19.37,0,0,0-24.9-10.8l11.6,4.8a14.37,14.37,0,0,1,7.7,18.8A14.16,14.16,0,0,1,248.77,170.38Z"/>
+                                    <path d="M336.07,99.18a23.1,23.1,0,1,0-23.1,23.1A23.11,23.11,0,0,0,336.07,99.18Zm-40.3,0a17.3,17.3,0,1,1,17.3,17.3A17.31,17.31,0,0,1,295.77,99.18Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/underland-the-climb.png" alt="Underground excavation containing 
+                        character, building elements and extraterrestrial monsters." />
+                        
+                        <h3>Underland: The Climb</h3>
+
+                        <p>
+                            The city of Underland was attacked by extraterrestrial creatures. The invaders 
+                            issued a signal and now many of them are in the city. Help Ivy survive as she 
+                            escapes to the Earth's surface. On her journey she must use various tools 
+                            intelligently to be able to dig the ground, avoid acid and go through very 
+                            strange constructions.
+                        </p>
+
+                        <div class="button-container">
+                            <a class="button" target="_blank" 
+                                href="https://store.steampowered.com/app/1592340/Underland_The_Climb/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19" fill="#000000">
+                                    <title>Steam Logo</title>
+                                    <path d="M471.93,94l-6.1,10.8a30.91,30.91,0,0,0-16.8-5.3c-6.4,0-10.4,2.6-10.4,7.4,0,5.8,7,7.1,17.5,10.9,11.2,4,17.7,8.7,17.7,18.9,0,14.1-11.1,22-27,22-7.8,0-17.1-2-24.3-6.4l4.5-12a42,42,0,0,0,19.1,4.9c8.4,0,12.4-3.1,12.4-7.7,0-5.2-6.1-6.8-15.9-10.1-11.2-3.7-19-8.7-19-20.1,0-12.9,10.3-20.2,25.1-20.2C459,87.28,467.33,90.48,471.93,94Z"/>
+                                    <path d="M521,100.88v56.7h-14.5v-56.7h-21V88.48h56.4v12.4Z"/>
+                                    <path d="M571.43,100.78v15.6h27.7v12.4h-27.7V145h32.1v12.5h-46.6v-69h46.6v12.4h-32.1Z"/>
+                                    <path d="M635.93,144.18l-4.6,13.4h-15.2L642,88.48h14.6l26.7,69.1h-15.7l-4.7-13.4Zm13.4-39.3-9.4,27.7H659Z"/>
+                                    <path d="M756.53,115.18l-18.9,40.4h-8.2l-18.6-40v42h-13.9V88.48h13.8l23.2,49.9,22.4-49.9h14v69.1h-13.8Z"/>
+                                    <path d="M282.77,31.08a91.7,91.7,0,0,0-91.4,84.4l49.2,20.3a26.25,26.25,0,0,1,14.6-4.5h1.4l21.9-31.7v-.4a34.6,34.6,0,1,1,34.6,34.6h-.8l-31.2,22.3v1.2a26,26,0,0,1-51.5,5.1l-35.2-14.5a91.79,91.79,0,1,0,88.4-116.8Z"/>
+                                    <path d="M248.77,170.38l-11.3-4.7a19.92,19.92,0,0,0,10,9.6,19.57,19.57,0,0,0,25.5-10.5,19.25,19.25,0,0,0,0-14.9,19.37,19.37,0,0,0-24.9-10.8l11.6,4.8a14.37,14.37,0,0,1,7.7,18.8A14.16,14.16,0,0,1,248.77,170.38Z"/>
+                                    <path d="M336.07,99.18a23.1,23.1,0,1,0-23.1,23.1A23.11,23.11,0,0,0,336.07,99.18Zm-40.3,0a17.3,17.3,0,1,1,17.3,17.3A17.31,17.31,0,0,1,295.77,99.18Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/lost-astronaut.png" alt="Rocket taking off leaving a trail of 
+                        smoke behind." />
+                        
+                        <h3>Lost Astronaut</h3>
+
+                        <p>
+                            Control a spaceship and attempts to land safely on blue platforms. You can move 
+                            the ship and burn fuel to fire a thruster, attempting to gently land on marked 
+                            areas. A new scenario is loaded after every successful landing.
+                        </p>
+
+                        <div class="button-container">
+                            <a class="button" target="_blank" 
+                                href="https://store.steampowered.com/app/1481140/Lost_Astronaut/">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 245.19" fill="#000000">
+                                    <title>Steam Logo</title>
+                                    <path d="M471.93,94l-6.1,10.8a30.91,30.91,0,0,0-16.8-5.3c-6.4,0-10.4,2.6-10.4,7.4,0,5.8,7,7.1,17.5,10.9,11.2,4,17.7,8.7,17.7,18.9,0,14.1-11.1,22-27,22-7.8,0-17.1-2-24.3-6.4l4.5-12a42,42,0,0,0,19.1,4.9c8.4,0,12.4-3.1,12.4-7.7,0-5.2-6.1-6.8-15.9-10.1-11.2-3.7-19-8.7-19-20.1,0-12.9,10.3-20.2,25.1-20.2C459,87.28,467.33,90.48,471.93,94Z"/>
+                                    <path d="M521,100.88v56.7h-14.5v-56.7h-21V88.48h56.4v12.4Z"/>
+                                    <path d="M571.43,100.78v15.6h27.7v12.4h-27.7V145h32.1v12.5h-46.6v-69h46.6v12.4h-32.1Z"/>
+                                    <path d="M635.93,144.18l-4.6,13.4h-15.2L642,88.48h14.6l26.7,69.1h-15.7l-4.7-13.4Zm13.4-39.3-9.4,27.7H659Z"/>
+                                    <path d="M756.53,115.18l-18.9,40.4h-8.2l-18.6-40v42h-13.9V88.48h13.8l23.2,49.9,22.4-49.9h14v69.1h-13.8Z"/>
+                                    <path d="M282.77,31.08a91.7,91.7,0,0,0-91.4,84.4l49.2,20.3a26.25,26.25,0,0,1,14.6-4.5h1.4l21.9-31.7v-.4a34.6,34.6,0,1,1,34.6,34.6h-.8l-31.2,22.3v1.2a26,26,0,0,1-51.5,5.1l-35.2-14.5a91.79,91.79,0,1,0,88.4-116.8Z"/>
+                                    <path d="M248.77,170.38l-11.3-4.7a19.92,19.92,0,0,0,10,9.6,19.57,19.57,0,0,0,25.5-10.5,19.25,19.25,0,0,0,0-14.9,19.37,19.37,0,0,0-24.9-10.8l11.6,4.8a14.37,14.37,0,0,1,7.7,18.8A14.16,14.16,0,0,1,248.77,170.38Z"/>
+                                    <path d="M336.07,99.18a23.1,23.1,0,1,0-23.1,23.1A23.11,23.11,0,0,0,336.07,99.18Zm-40.3,0a17.3,17.3,0,1,1,17.3,17.3A17.31,17.31,0,0,1,295.77,99.18Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/ludo.png" alt="Ludo board with dice thrown on the screen." />
+                        
+                        <h3>Ludo</h3>
+
+                        <p>
+                            Ludo is a strategy board game, in which the players race their four piece from 
+                            start to finish according to the rolls of a single die. Ludo is derived from the 
+                            Indian game Pachisi, but simpler. The game and its variations are popular in many 
+                            countries and under various names.
+                        </p>
+
+                        <div class="button-container">
+                            <a class="button" target="_blank" href="https://www.airconsole.com/play/ludo">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 130 28">
+                                    <path fill="#000000" d="M32.9 7.54h2.32L40.45 21h-2.1l-1.53-4.09h-5.77L29.54 21h-2L32.9 7.54zm3.42 7.98l-2.28-6.07h-.19l-2.28 6.07h4.75zm6.06-8.19h1.87v1.95h-1.87V7.33zm0 3.63h1.87V21h-1.87V10.96zm5.1 0h1.77v1.64c0-.32.14-.62.41-.9.28-.28.63-.51 1.06-.68.43-.18.85-.27 1.27-.27h.91v1.6h-1.04c-.88 0-1.52.12-1.93.35-.38.22-.58.63-.58 1.23V21H47.5V10.96zm12.65 10.25c-3.77 0-5.66-1.22-5.66-3.65v-6.4c0-2.56 1.89-3.85 5.66-3.85 1.29 0 2.52.13 3.7.4V9.2c-1.34-.33-2.55-.5-3.66-.5-.54 0-1 .04-1.4.1-.41.06-.8.16-1.17.32-.8.34-1.2 1.02-1.2 2.03v6.3c0 1.55 1.28 2.33 3.85 2.33 1.11 0 2.33-.17 3.65-.5v1.53c-1.17.27-2.43.4-3.77.4zm10.59 0c-.89 0-1.55-.04-2-.1a4.4 4.4 0 01-1.32-.4c-.46-.2-.79-.54-1-1-.2-.47-.3-1.1-.3-1.88v-3.49c0-.62.07-1.17.22-1.64s.35-.83.6-1.1c.2-.23.52-.41.93-.53a6.1 6.1 0 011.31-.27 28.02 28.02 0 013.17.02c.38.02.77.1 1.19.2.43.13.76.31 1 .56.23.25.43.61.6 1.08.15.49.22 1.05.22 1.68v3.49c0 1.17-.27 2.03-.8 2.57-.23.22-.55.4-.96.52-.42.12-.84.2-1.29.25-.52.02-1.05.04-1.57.04zm0-1.23c.58 0 1-.01 1.26-.04.27-.03.52-.1.77-.23a.95.95 0 00.52-.54c.1-.26.16-.62.16-1.07v-4.07c0-.62-.07-1.07-.22-1.35a1.1 1.1 0 00-.8-.56c-.35-.1-.92-.14-1.7-.14-.77 0-1.34.05-1.71.14a1.1 1.1 0 00-.77.56c-.15.28-.23.73-.23 1.35v4.07c0 .45.05.81.15 1.07.1.25.29.43.53.54.25.13.5.2.77.23.26.03.69.04 1.27.04zm7.53-9.02h1.87v1.23c.2-.96 1.3-1.44 3.3-1.44 1.28 0 2.18.24 2.7.7.52.47.78 1.2.78 2.19V21h-1.86v-7.26c0-.26-.03-.48-.07-.64a1.4 1.4 0 00-.25-.5c-.27-.35-.89-.52-1.84-.52-.73 0-1.3.06-1.7.17-.39.1-.67.26-.83.5-.15.23-.23.56-.23 1V21h-1.87V10.96zm14.96 10.25c-1.06 0-2.21-.09-3.44-.25v-1.43c1.62.26 2.78.4 3.48.4.89 0 1.53-.1 1.91-.26.39-.18.58-.5.58-.97v-1.02c0-.43-.14-.73-.43-.91a2.79 2.79 0 00-1.41-.27h-1.14a3.83 3.83 0 01-2.39-.64 2.17 2.17 0 01-.8-1.8v-.94c0-1.58 1.49-2.37 4.47-2.37.22 0 1.24.06 3.05.17v1.35a20.7 20.7 0 00-3.13-.3c-.98 0-1.65.1-2.01.3-.36.2-.54.52-.54.97v.85c0 .68.61 1.02 1.84 1.02h1.17c2.11 0 3.17.79 3.17 2.36v.88c0 1.03-.36 1.77-1.08 2.21-.72.43-1.82.65-3.3.65zm11.21 0c-.88 0-1.55-.04-1.99-.1a4.41 4.41 0 01-1.33-.4c-.45-.2-.79-.54-1-1-.2-.47-.3-1.1-.3-1.88v-3.49c0-.62.07-1.17.22-1.64.16-.47.36-.83.6-1.1.21-.23.52-.41.94-.53.43-.14.86-.23 1.3-.27a28.05 28.05 0 013.18.02c.37.02.77.1 1.18.2.43.13.76.31 1 .56.23.25.43.61.6 1.08.15.49.23 1.05.23 1.68v3.49c0 1.17-.27 2.03-.81 2.57-.22.22-.54.4-.96.52-.41.12-.84.2-1.28.25-.53.02-1.05.04-1.58.04zm0-1.23c.58 0 1-.01 1.27-.04.26-.03.52-.1.76-.23a.95.95 0 00.52-.54c.11-.26.17-.62.17-1.07v-4.07c0-.62-.08-1.07-.23-1.35a1.1 1.1 0 00-.79-.56c-.36-.1-.93-.14-1.7-.14-.77 0-1.35.05-1.72.14a1.1 1.1 0 00-.77.56c-.15.28-.23.73-.23 1.35v4.07c0 .45.05.81.15 1.07.11.25.29.43.54.54.25.13.5.2.77.23.26.03.68.04 1.26.04zm7.54-13.5h1.86V21h-1.86V6.48zm9.33 14.73c-3.07 0-4.6-1.03-4.6-3.07v-3.96c0-1.22.34-2.1 1.03-2.62.71-.54 1.84-.8 3.4-.8 1.49 0 2.55.25 3.2.76.66.51 1 1.4 1 2.66v2.22h-6.74v1.51c0 .7.24 1.19.72 1.5.48.3 1.23.45 2.24.45.95 0 2.08-.17 3.38-.5v1.43a17.1 17.1 0 01-3.63.42zm2.16-6.04V13.6c0-.61-.19-1.03-.56-1.25-.36-.23-.98-.35-1.87-.35-.85 0-1.48.12-1.86.35-.4.22-.58.64-.58 1.25v1.57h4.87z"/>
+                                    <path fill="#000000" d="M6.2 24.38c-.27-.17-.48-.4-.68-.64-.47-.6-.75-1.3-.95-2.02a11.32 11.32 0 01-.37-3.92c.06-.73.14-1.3.3-2a29.2 29.2 0 013.17-7.9c.5-.86 1.08-1.67 1.78-2.39.34-.35.72-.67 1.13-.93a2.95 2.95 0 012.88-.22c.75.31 1.38.8 1.95 1.36.88.86 1.58 1.85 2.2 2.9 1.23 2.1 2.12 4.4 2.63 6.79.23 1.08.36 2.17.34 3.28 0 .43-.05.92-.14 1.34v-.14c.02-1.81-.28-3.62-.89-5.33-.4-1.14-.92-2.22-1.66-3.18a5.62 5.62 0 00-.89-.93 2.1 2.1 0 00-2.11-.4c-.68.22-1.29.57-1.85 1-.94.73-1.74 1.6-2.48 2.52a25.16 25.16 0 00-3.64 6.33c-.32.81-.58 1.63-.73 2.5a4.67 4.67 0 00.02 1.97v.02z"/>
+                                    <path fill="#000000" d="M7.53 24.79a.8.8 0 00.47.13c.13 0 .45-.05.69-.16.41-.2.72-.45 1.05-.77.8-.81 1.62-1.6 2.45-2.38.84-.8 1.65-1.64 2.54-2.39.42-.35.84-.7 1.34-.93.19-.1.38-.16.58-.18.4-.04.72.12.98.4.44.44.79.95 1.03 1.52.19.43.38.85.65 1.23.03.06.08.11.14.16a14.3 14.3 0 00-1.7-8.7 6.01 6.01 0 00-1.2-1.52l-.14-.11-.09.16a34.78 34.78 0 01-2.96 4.83c-.5.68-1.05 1.34-1.7 1.89-.35.28-.71.53-1.15.64-.38.1-.7.01-.97-.3l-.22-.3c-.1-.19-.18-.38-.27-.59l-.22.42a19.39 19.39 0 00-1.54 3.66c-.2.7-.36 1.41-.32 2.15.03.76.48 1.1.56 1.14z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news">
+        <div class="wrapper">
+            <header>
+                <h2>News</h2>
+            </header>
+
+            <div class="content">
+                <div class="cards">
+                    <div class="card">
+                        <img src="./assets/games-keys.png" alt="GamesKeys written in white with the letter k 
+                        in orange on a black background." />
+
+                        <a class="new" target="_blank" 
+                            href="https://gameskeys.net/top-steam-games-to-tryout-in-april-2022/">
+                            <p>Published: 12th April 2022</p>
+
+                            <h3>No Cat Fights Here: Top Steam Games to Tryout In April 2022</h3>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/eurogamer.png" alt="Eurogamer capitalized in blue on a light 
+                        background, with the image of a globe on the right." />
+
+                        <a class="new" target="_blank" 
+                            href="https://www.eurogamer.net/underland-is-a-fascinating-game-about-drilling-and-blowing-things-up">
+                            <p>Published: 8th November 2021</p>
+
+                            <h3>Underland is a fascinating game about drilling and blowing things up</h3>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/games-park.png" alt="Gamespark written in blue on a white 
+                        background, with the letter s in the shape of a lightning bolt." />
+
+                        <a class="new" target="_blank" 
+                            href="https://www.gamespark.jp/article/2021/06/13/109505.html">
+                            <p>Published: 12th June 2021</p>
+
+                            <h3>Cat Slide Tiles: Interview with developer [Japanese]</h3>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/games-keys.png" alt="GamesKeys written in white with the letter k 
+                        in orange on a black background." />
+
+                        <a class="new" target="_blank" 
+                            href="https://gameskeys.net/top-steam-games-to-tryout-in-june-2021/">
+                            <p>Published: 12th June 2021</p>
+
+                            <h3>Cat Slide Tiles: Top Steam Games To Tryout In June 2021</h3>
+                        </a>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/pc-gamer.png" alt="Pc Gamer written in white capital letters on a 
+                        dark background, with the letters PC on a red background." />
+
+                        <a class="new" target="_blank" 
+                            href="https://www.pcgamer.com/five-new-steam-games-you-probably-missed-april-26-2021/">
+                            <p>Published: 26th April 2021</p>
+
+                            <h3>Underland: The Climb. Five new Steam games you probably missed</h3>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="wrapper">
+            <header>
+                <h2>About</h2>
+            </header>
+
+            <div class="content">
+                <p>
+                    Minicactus Games is an independent game studio by Cleiton Machado 
+                    <a target="_blank" href="https://twitter.com/clayton_axel">(@clayton_axel)</a>
+                    .
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="wrapper">
+            <header>
+                <h2>Contact</h2>
+            </header>
+
+            <div class="content">
+                <ul>
+                    <li>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 
+                            5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 
+                            3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#00856F" stroke-width="2" 
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 
+                            9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#00856F" stroke-width="2" 
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+
+                        R. Bispo Renato Conceição da Cunha, 384 <br>
+                        Centro - Lauro de Freitas/BA
+                    </li>
+
+                    <li>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 
+                            18V6C2 4.9 2.9 4 4 4Z" stroke="#00856F" stroke-width="2" stroke-linecap="round" 
+                            stroke-linejoin="round"/>
+                            <path d="M22 6L12 13L2 6" stroke="#00856F" stroke-width="2" 
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                        contact@minicactusgames.com
+                    </li>
+                </ul>
+
+                <a class="button" target="_blank" href="https://wa.me/557488414905">
+                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" 
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.6 13.0001C14.4 12.9001 13.1 12.3001 12.9 12.2001C12.7 12.1001 12.5 
+                        12.1001 12.3 12.3001C12.1 12.5001 11.7 13.1001 11.5 13.3001C11.4 13.5001 11.2 13.5001 
+                        11 13.4001C10.3 13.1001 9.6 12.7001 9 12.2001C8.5 11.7001 8 11.1001 7.6 10.5001C7.5 
+                        10.3001 7.6 10.1001 7.7 10.0001C7.8 9.9001 7.9 9.7001 8.1 9.6001C8.2 9.5001 8.3 
+                        9.3001 8.3 9.2001C8.4 9.1001 8.4 8.9001 8.3 8.8001C8.2 8.7001 7.7 7.5001 7.5 
+                        7.0001C7.4 6.3001 7.2 6.3001 7 6.3001C6.9 6.3001 6.7 6.3001 6.5 6.3001C6.3 6.3001 6 
+                        6.5001 5.9 6.6001C5.3 7.2001 5 7.9001 5 8.7001C5.1 9.6001 5.4 10.5001 6 11.3001C7.1 
+                        12.9001 8.5 14.2001 10.2 15.0001C10.7 15.2001 11.1 15.4001 11.6 15.5001C12.1 15.7001 
+                        12.6 15.7001 13.2 15.6001C13.9 15.5001 14.5 15.0001 14.9 14.4001C15.1 14.0001 15.1 
+                        13.6001 15 13.2001C15 13.2001 14.8 13.1001 14.6 13.0001ZM17.1 3.9001C13.2 9.77516e-05 
+                        6.9 9.77516e-05 3 3.9001C-0.2 7.1001 -0.8 12.0001 1.4 15.9001L0 21.0001L5.3 
+                        19.6001C6.8 20.4001 8.4 20.8001 10 20.8001C15.5 20.8001 19.9 16.4001 19.9 10.9001C20 
+                        8.3001 18.9 5.8001 17.1 3.9001ZM14.4 17.9001C13.1 18.7001 11.6 19.2001 10 19.2001C8.5 
+                        19.2001 7.1 18.8001 5.8 18.1001L5.5 17.9001L2.4 18.7001L3.2 15.7001L3 15.4001C0.6 
+                        11.4001 1.8 6.4001 5.7 3.9001C9.6 1.4001 14.6 2.7001 17 6.5001C19.4 10.4001 18.3 
+                        15.5001 14.4 17.9001Z" fill="white"/>
+                    </svg>
+                    
+                    Contact
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrapper">
+            <div class="col-a">
+                <a class="logo" href="#games">
+                    <img src="./assets/minicactus-games-logo.png" alt="Minicactus Games logo showing a cactus 
+                    with a hanging control" />
+                </a>
+        
+                <p>©2022 Minicactus Games <br> CNPJ: 41.604.427/0001-86</p>
+            </div>
+
+            <div class="col-b">
+                <ul class="social-links">
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/minicactusgames/">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 1.99997H7C4.23858 1.99997 2 4.23855 2 6.99997V17C2 19.7614 
+                                4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V6.99997C22 4.23855 19.7614 
+                                1.99997 17 1.99997Z" stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" 
+                                stroke-linejoin="round"/>
+                                <path d="M15.9997 11.3701C16.1231 12.2023 15.981 13.0523 15.5935 
+                                13.7991C15.206 14.5459 14.5929 15.1515 13.8413 15.5297C13.0898 15.908 12.2382 
+                                16.0397 11.4075 15.906C10.5768 15.7723 9.80947 15.3801 9.21455 
+                                14.7852C8.61962 14.1903 8.22744 13.4229 8.09377 12.5923C7.96011 11.7616 
+                                8.09177 10.91 8.47003 10.1584C8.84829 9.40691 9.45389 8.7938 10.2007 
+                                8.4063C10.9475 8.0188 11.7975 7.87665 12.6297 8.00006C13.4786 8.12594 14.2646 
+                                8.52152 14.8714 9.12836C15.4782 9.73521 15.8738 10.5211 15.9997 11.3701Z" 
+                                stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" 
+                                stroke-linejoin="round"/>
+                                <path d="M17.5 6.49997H17.51" stroke="#FFFAF1" stroke-width="2" 
+                                stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>   
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/minicactusgames">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 1.99997H15C13.6739 1.99997 12.4021 2.52675 11.4645 
+                                3.46444C10.5268 4.40212 10 5.67389 10 6.99997V9.99997H7V14H10V22H14V14H17L18 
+                                9.99997H14V6.99997C14 6.73475 14.1054 6.4804 14.2929 6.29286C14.4804 6.10533 
+                                14.7348 5.99997 15 5.99997H18V1.99997Z" stroke="#FFFAF1" stroke-width="2" 
+                                stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a target="_blank" 
+                            href="https://www.youtube.com/channel/UCPaNusJeoBWGPwrD-MCBYrw/featured">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.5396 6.42C22.4208 5.94541 22.1789 5.51057 21.8382 
+                                5.15941C21.4976 4.80824 21.0703 4.55318 20.5996 4.42C18.8796 4 11.9996 4 
+                                11.9996 4C11.9996 4 5.1196 4 3.3996 4.46C2.92884 4.59318 2.50157 4.84824 
+                                2.16094 5.19941C1.82031 5.55057 1.57838 5.98541 1.4596 6.46C1.14481 8.20556 
+                                0.990831 9.97631 0.999595 11.75C0.988374 13.537 1.14236 15.3213 1.4596 
+                                17.08C1.59055 17.5398 1.8379 17.9581 2.17774 18.2945C2.51758 18.6308 2.93842 
+                                18.8738 3.3996 19C5.1196 19.46 11.9996 19.46 11.9996 19.46C11.9996 19.46 
+                                18.8796 19.46 20.5996 19C21.0703 18.8668 21.4976 18.6118 21.8382 
+                                18.2606C22.1789 17.9094 22.4208 17.4746 22.5396 17C22.852 15.2676 23.0059 
+                                13.5103 22.9996 11.75C23.0108 9.96295 22.8568 8.1787 22.5396 6.42Z" 
+                                stroke="#FFFAF1" stroke-width="2" stroke-linecap="round" 
+                                stroke-linejoin="round"/>
+                                <path d="M9.75 15.02L15.5 11.75L9.75 8.48001V15.02Z" stroke="#FFFAF1" 
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>  
+                        </a>
+                    </li>
+
+                    <li>
+                        <a target="_blank" href="https://twitter.com/minicactusgames">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 
+                                18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.9572 14.8821 
+                                3.28445C14.0247 3.61171 13.2884 4.1944 12.773 4.95372C12.2575 5.71303 11.9877 
+                                6.61234 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39545C5.36074 
+                                6.60508 4.01032 5.43864 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.0989 1 
+                                19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 
+                                5.66349 22.6608 4.39271 23 3V3Z" stroke="#FFFFFF" stroke-width="2" 
+                                stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <a id="backToTopButton" href="#games">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" fill="#00856F"/>
+            <path d="M20 27V13" stroke="white" stroke-width="2" stroke-linecap="round" 
+            stroke-linejoin="round"/>
+            <path d="M13 20L20 13L27 20" stroke="white" stroke-width="2" stroke-linecap="round" 
+            stroke-linejoin="round"/>
+        </svg>   
+    </a>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="./main.js"></script>
+</body>
+</html>
