@@ -1,4 +1,6 @@
 # minicactus-games
-Modification of the "Doctor Care" project developed at Rocketseat's Next Level Week - NLW Return to create the Minicactus Games website
 
-The project has four main sections, namely: "Game List", "News", "About" and "Contact". The main changes I made in the original project were the redefinition of the home section to present the list of games and the creation of the news section, in addition to adapting the content of the sections and customizing it according to the needs of the company.
+Modificação do projeto "Doctor Care", desenvolvido na Next Level Week da Rocketseat, para criação do site da Minicactus Games, um estúdio brasileiro de jogos indie.
+O projeto conta com quatro seções principais, sendo elas: "Game List", "News", "About" e "Contact". As principais modificações que realizei no projeto original foram a redefinição da seção de início para apresentar a lista de jogos e a criação da seção de notícias, além da adaptação de conteúdo das seções e personalização de acordo com as necessidades da empresa.
+
+<a target="_blank" href="https://www.linkedin.com/pulse/adapta%25C3%25A7%25C3%25A3o-do-projeto-desenvolvido-na-nlw-da-para-site-machado-rocha/?trackingId=7J2SOoIfQFOO8ncz8H9LAA%3D%3D">Artigo no LinkedIn</a>
