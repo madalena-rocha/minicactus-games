@@ -1,3 +1,5 @@
+const navigation = document.getElementById('navigation')
+
 // Ajuste de carregamento da função onScroll
 window.addEventListener('scroll', onScroll)
 
