@@ -261,7 +261,8 @@ body.menu-expanded button path {
     stroke: var(--secondary-color);
 }
 
-/*=== TRAILER ===========================*/
+/*=== TRAILER ===========================
+
 #trailer {
     padding-top: calc(6rem + var(--nav-height));
     padding-bottom: 6rem;
@@ -271,7 +272,7 @@ body.menu-expanded button path {
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) 
 }
 
 #trailer iframe {
@@ -288,7 +289,7 @@ body.menu-expanded button path {
 
 #games {
     padding-block: 0;
-    /*padding-top: calc(10rem + var(--nav-height));*/
+    padding-top: calc(10rem + var(--nav-height));
 }
 
 #games header h2 { 
@@ -297,6 +298,11 @@ body.menu-expanded button path {
 
 #games header span { 
     color: #FF9001;
+}
+
+#games .content a {
+    color: var(--paragraph);
+    text-decoration: none;
 }
 
 #games .cards {
@@ -633,6 +639,10 @@ footer .social-links {
     #games .card {
         width: 40%;
         flex-grow: 1;
+    }
+
+    #games .card:last-child {
+        max-width: calc(50% - 2rem);
     }
 
     /*=== NEWS ==============================*/
