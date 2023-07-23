@@ -327,6 +327,10 @@ body.menu-expanded button path {
     fill: var(--secondary-color);
 }
 
+#air-console:hover svg path {
+    fill: var(--secondary-color);
+}
+
 #games .button-container {
     display: flex;
     gap: 0.8rem;
