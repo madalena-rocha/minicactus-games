@@ -456,6 +456,11 @@ footer p {
     margin-bottom: 3.2rem;
 }
 
+footer a {
+    color: var(--paragraph);
+    text-decoration: none;
+}
+
 footer .social-links {
     justify-content: flex-start;
 }
@@ -478,6 +483,46 @@ footer .social-links {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+/*=== PRIVACY POLICY ====================*/
+
+#privacy-policy {
+    padding-top: calc(10rem + var(--nav-height));
+}
+
+#privacy-policy header h2 { 
+    margin-bottom: 6rem;
+}
+
+#privacy-policy header span { 
+    color: #FF9001;
+}
+
+#privacy-policy .content {
+    text-align: left; 
+}
+
+#privacy-policy .content p + p {
+    margin-top: 1.6rem;
+}
+
+#privacy-policy .content h3 {
+    margin-block: 2.4rem;
+    color: var(--headline);
+}
+
+#privacy-policy .content a {
+    color: var(--paragraph);
+    text-decoration: none;
+}
+
+#privacy-policy .content ul {
+    margin-block: 1.6rem;
+}
+
+#privacy-policy .content ul li {
+    color: var(--paragraph);
 }
 
 /*=== RESPONSIVO ========================*/
@@ -537,6 +582,10 @@ footer .social-links {
         align-items: center;
         justify-content: space-between;
         width: 65%;
+    }
+
+    nav#navigation .short-menu {
+        width: auto;
     }
     
     nav#navigation .menu ul:nth-child(1) {
