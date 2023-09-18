@@ -336,6 +336,26 @@ body.menu-expanded button path {
     gap: 0.8rem;
 }
 
+#epic-games svg {
+    height: 70%;
+}
+
+#epic-games svg path:first-child {
+    fill: var(--primary-color);
+}
+
+#epic-games svg path:last-child {
+    fill: var(--secondary-color);
+}
+
+#epic-games:hover svg path:first-child {
+    fill: var(--secondary-color);
+}
+
+#epic-games:hover svg path:last-child {
+    fill: var(--body-color);
+}
+
 /*=== NEWS ==============================*/
 
 #news header h2 { 
