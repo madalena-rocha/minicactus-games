@@ -512,9 +512,12 @@ footer .social-links {
     color: var(--headline);
 }
 
+#privacy-policy .content h3:last-of-type {
+    color: #FF9001;
+}
+
 #privacy-policy .content a {
-    color: var(--paragraph);
-    text-decoration: none;
+    color: #42A5F5;
 }
 
 #privacy-policy .content ul {
